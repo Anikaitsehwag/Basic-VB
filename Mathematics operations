@@ -1,0 +1,83 @@
+Private Sub Command1_Click()
+Dim i%, n%, num%
+n = Val(InputBox("enter the number of elements"))
+For i = 0 To n - 1
+num = Val(InputBox("enter elements"))
+List1.AddItem num
+Next i
+End Sub
+
+Private Sub Command2_Click()
+Dim n%, i%, t%, av%, num%
+n = List1.ListCount
+For i = 0 To n - 1
+num = List1.List(i)
+t = t + num
+Next i
+av = t / n
+Print "total="; t
+Print "average="; av
+End Sub
+
+Private Sub Command3_Click()
+Dim n%, i%, num%, e%, p%, ne%, z%
+n = List1.ListCount
+For i = 0 To n - 1
+num = List1.List(i)
+If num > 0 Then
+p = p + 1
+ElseIf num < 0 Then
+ne = ne + 1
+Else
+z = z + 1
+End If
+Next i
+Print "number of positive="; p
+Print "number of negetive="; ne
+Print "number of zero="; z
+End Sub
+
+Private Sub Command4_Click()
+Dim n%, i%, num%, e%, o%, z%
+n = List1.ListCount
+For i = 0 To n - 1
+num = List1.List(i)
+If num = 0 Then
+z = z + 1
+ElseIf num Mod 2 = 0 Then
+e = e + 1
+ElseIf num Mod 2 = 1 Then
+o = o + 1
+End If
+Next i
+Print "number of zeros="; z
+Print "number of even numbers="; e
+Print "number of odd numbers="; o
+End Sub
+
+Private Sub Command5_Click()
+Dim n%, i%
+n = List1.ListCount
+For i = n - 1 To 0 Step -1
+Print List1.List(i)
+Next i
+End Sub
+
+Private Sub Command6_Click()
+Dim n$
+n = Val(InputBox("enter the position of the item to be removed"))
+List1.RemoveItem n - 1
+End Sub
+
+Private Sub Command7_Click()
+List1.Clear
+End Sub
+
+Private Sub Command8_Click()
+Cls
+End Sub
+
+Private Sub Command9_Click()
+End
+End Sub
+
